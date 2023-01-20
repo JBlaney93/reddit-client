@@ -8,26 +8,20 @@ const ArticlesContainer = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortValue, setSortValue] = useState("");
     const [limit, setLimit] = useState(50);
+    const [page, setPage] = useState("mma")
 
-    console.log("Search Term:", searchTerm)
-    console.log("Search Term:", sortValue)
 
     useEffect(() => {
         getArticles();
-    }, [limit])
+    }, [limit, page])
 
 
     const getArticles =  function () {
-        console.log(1)
-        fetch(`https://www.reddit.com/r/mma.json?limit=${limit}`)
+        fetch(`https://www.reddit.com/r/${page}.json?limit=${limit}`)
             .then(results => results.json())
             .then(articles => {
                 setArticles(articles.data.children)
-                console.log(2)
             })
-
-
-        console.log(3)
     }
 
 
@@ -71,10 +65,14 @@ const ArticlesContainer = () => {
                     <option value="comments">Comments</option>
                 </select>
             </div>
+
+            <button onClick={() => setPage("javascript")} className='prev-page-button'>javascript</button>
+            <button onClick={() => setPage("mma")} className='prev-page-button'>mma</button>
+            <button onClick={() => setPage("hiphopheads")} className='prev-page-button'>hiphopheads</button>
             
             <div className="article-list-container">
                 <ArticleList articles={sortedArticles} />
-                <button onClick={() => setLimit(limit + 25)} className='load-more-button'>More Posts</button>
+                <submit onClick={() => setLimit(limit + 25)} className='load-more-button' />
             </div>
         </div>
     )
