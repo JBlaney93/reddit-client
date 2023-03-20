@@ -68,7 +68,7 @@ const ArticlesContainer = () => {
 
             <button onClick={() => setPage("javascript")} className='prev-page-button'>javascript</button>
             <button onClick={() => setPage("mma")} className='prev-page-button'>mma</button>
-            <button onClick={() => setPage("hiphopheads")} className='prev-page-button'>hiphopheads</button>
+            <button onClick={() => setPage("pics")} className='prev-page-button'>pics</button>
             
             <div className="article-list-container">
                 <ArticleList articles={sortedArticles} />
