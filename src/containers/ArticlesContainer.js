@@ -8,7 +8,7 @@ const ArticlesContainer = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortValue, setSortValue] = useState("");
     const [limit, setLimit] = useState(50);
-    const [page, setPage] = useState("mma")
+    const [page, setPage] = useState("dogswearinghats")
 
 
     useEffect(() => {
@@ -37,6 +37,18 @@ const ArticlesContainer = () => {
     }
 
 
+    // const handleSubredditSearch = (event) => {
+    //     const searchTerm = event.target.value;
+    //     setPage(searchTerm);
+    //   }
+      
+    const setSearch = (event) => {
+        event.preventDefault();
+        const input = event.target.elements.subredditSearch;
+        setPage(input.value);
+    }
+
+
     const filteredArticles = articles.filter((article) => {
         return article.data.title.toLowerCase().includes(searchTerm.toLowerCase());
     });
@@ -58,6 +70,11 @@ const ArticlesContainer = () => {
         <div>    
             <div className="search-bar-container">
                 <input id="search" placeholder="Search Posts" onChange={handleChange}/>
+
+                <form onSubmit={setSearch}>
+                    <input id="subredditSearch" placeholder='Search Subreddits'/>
+                    <button type="submit">Search</button>
+                </form>
 
                 <select id="sort" onChange={handlSortingChange}>
                     <option value="">Hot</option>

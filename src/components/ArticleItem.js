@@ -2,7 +2,7 @@ const ArticleItem = ({ post, permalink, url, upVotes, comments, image }) => {
 
     // Regex to match URLs that won't display/embedd
     const twitterRegex = /^https?:\/\/(www\.)?twitter\.com\/.+\/status\/\d+/;
-    const instagramRegex = /^https?:\/\/(www\.)?instagram\.com\/.+\/status\/\d+/;
+    const instagramRegex = /^https?:\/\/(www\.)?instagram\.com\/+/;
     const imgurRegex = /^https?:\/\/(www\.)?imgur\.com\/\w+/;
     const youtubeRegex = /^https?:\/\/(www\.)?youtube\.com\/watch\?v=.+/;
 
@@ -20,25 +20,23 @@ const ArticleItem = ({ post, permalink, url, upVotes, comments, image }) => {
                 <p className="comments">Comments: {comments}</p>
             </div>
 
-            {image && !isTwitterLink && !isInstagramLink && !isImgurLink && !isYoutubeLink &&(
-                <iframe src={image} autostart="false" width='auto' height='auto'/>
-            )}
-
-            {isTwitterLink && (
-                <a href={image}>Link to twitter post</a>
-            )}
-
-            {isInstagramLink && (
-                <a href={image}>Link to instagram post</a>
-            )}
-
-            {isImgurLink && (
-                <a href={image}>Link to imgur post</a>
-            )}
-
-            {isYoutubeLink && (
-                <a href={image}>Link to youtube post</a>
-            )}
+            <div className="media-div">
+                {image && !isTwitterLink && !isInstagramLink && !isImgurLink && !isYoutubeLink &&(
+                    <img src={image} alt='no image' className='image-style' />
+                )}
+                {isTwitterLink && (
+                    <a href={image}>Link to twitter post</a>
+                )}
+                {isInstagramLink && (
+                    <a href={image}>Link to instagram post</a>
+                )}
+                {isImgurLink && (
+                    <a href={image}>Link to imgur post</a>
+                )}
+                {isYoutubeLink && (
+                    <a href={image}>Link to youtube post</a>
+                )}
+            </div>
 
             <div className='article-item__link'>
                 <a href={"https://www.reddit.com"+permalink} className='article-item__link-button'>
