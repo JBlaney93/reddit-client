@@ -8,7 +8,7 @@ const ArticlesContainer = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [sortValue, setSortValue] = useState("");
     const [limit, setLimit] = useState(50);
-    const [page, setPage] = useState("dogswearinghats")
+    const [page, setPage] = useState("abandonedscifi")
 
 
     useEffect(() => {
@@ -37,11 +37,6 @@ const ArticlesContainer = () => {
     }
 
 
-    // const handleSubredditSearch = (event) => {
-    //     const searchTerm = event.target.value;
-    //     setPage(searchTerm);
-    //   }
-      
     const setSearch = (event) => {
         event.preventDefault();
         const input = event.target.elements.subredditSearch;
@@ -69,13 +64,14 @@ const ArticlesContainer = () => {
     return (
         <div>    
             <div className="search-bar-container">
-                <input id="search" placeholder="Search Posts" onChange={handleChange}/>
 
                 <form onSubmit={setSearch}>
                     <input id="subredditSearch" placeholder='Search Subreddits'/>
                     <button type="submit">Search</button>
                 </form>
 
+                <input id="search" placeholder="Search Posts" onChange={handleChange}/>
+                
                 <select id="sort" onChange={handlSortingChange}>
                     <option value="">Hot</option>
                     <option value="upvotes">Upvotes</option>
@@ -83,8 +79,8 @@ const ArticlesContainer = () => {
                 </select>
             </div>
 
-            <button onClick={() => setPage("javascript")} className='prev-page-button'>javascript</button>
-            <button onClick={() => setPage("mma")} className='prev-page-button'>mma</button>
+            <button onClick={() => setPage("dogswearinghats")} className='prev-page-button'>dogswearinghats</button>
+            <button onClick={() => setPage("earthporn")} className='prev-page-button'>earthporn</button>
             <button onClick={() => setPage("pics")} className='prev-page-button'>pics</button>
             
             <div className="article-list-container">
