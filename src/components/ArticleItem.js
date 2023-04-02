@@ -39,7 +39,7 @@ const ArticleItem = ({ post, permalink, url, upVotes, comments, image }) => {
                 <p className="upvotes">UpVotes: {upVotes}</p>
                     <div className='article-item__link'>
                         <a href={"https://www.reddit.com"+permalink} className='article-item__link-button'>
-                            Link to Reddit Thread
+                            Reddit Thread
                         </a>
                     </div>
                 <p className="comments">Comments: {comments}</p>

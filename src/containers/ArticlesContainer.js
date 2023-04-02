@@ -62,7 +62,25 @@ const ArticlesContainer = () => {
 
 
     return (
-        <div>    
+        <div>  
+            <h1>imgreddit /r/{page}</h1>  
+
+            <div className='subreddit-button__container'>
+                {/* <p>Suggested image subreddits</p> */}
+                <button onClick={() => setPage("dogswearinghats")} className='subreddit-button'>dogswearinghats</button>
+                <button onClick={() => setPage("earthporn")} className='subreddit-button'>earthporn</button>
+                <button onClick={() => setPage("pics")} className='subreddit-button'>pics</button>
+                <button onClick={() => setPage("dogswearinghats")} className='subreddit-button'>dogswearinghats</button>
+                <button onClick={() => setPage("earthporn")} className='subreddit-button'>earthporn</button>
+                <button onClick={() => setPage("pics")} className='subreddit-button'>pics</button>
+                <button onClick={() => setPage("dogswearinghats")} className='subreddit-button'>dogswearinghats</button>
+                <button onClick={() => setPage("earthporn")} className='subreddit-button'>earthporn</button>
+                <button onClick={() => setPage("pics")} className='subreddit-button'>pics</button>
+                <button onClick={() => setPage("dogswearinghats")} className='subreddit-button'>dogswearinghats</button>
+                <button onClick={() => setPage("earthporn")} className='subreddit-button'>earthporn</button>
+                <button onClick={() => setPage("pics")} className='subreddit-button'>pics</button>
+            </div>
+
             <div className="search-bar-container">
 
                 <form onSubmit={setSearch}>
@@ -71,7 +89,7 @@ const ArticlesContainer = () => {
                 </form>
 
                 <input id="search" placeholder="Search Posts" onChange={handleChange}/>
-                
+
                 <select id="sort" onChange={handlSortingChange}>
                     <option value="">Hot</option>
                     <option value="upvotes">Upvotes</option>
@@ -79,9 +97,7 @@ const ArticlesContainer = () => {
                 </select>
             </div>
 
-            <button onClick={() => setPage("dogswearinghats")} className='prev-page-button'>dogswearinghats</button>
-            <button onClick={() => setPage("earthporn")} className='prev-page-button'>earthporn</button>
-            <button onClick={() => setPage("pics")} className='prev-page-button'>pics</button>
+
             
             <div className="article-list-container">
                 <ArticleList articles={sortedArticles} />

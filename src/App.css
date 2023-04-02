@@ -27,9 +27,16 @@ p {
   font-weight: 200;
 }
 
-.container {
-  max-width: 70%;
+.App {
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 80%;
+
 }
 
 .about {
@@ -75,7 +82,7 @@ p {
 
 .article-item__votes-and-comments {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 5px 10px 10px 0;
   margin:0;
 }
@@ -100,18 +107,19 @@ p {
 
 .article-item__link-button {
   display: block;
-  background-color: black;
+  background-color: #005ca0;
   color: white;
   font-weight: 700;
   font-size: 14px;
-  padding: 14px;
+  padding: 10px;
+  border-radius: 4px;
   text-decoration: none;
   border-style: none;
   transition: all ease .50s;
 }
 
 .article-item__link-button:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #004172;
 }
 
 .load-more-button {
@@ -138,5 +146,22 @@ p {
 
 .image-style {
   width: 100%;
-  height: auto;
+}
+
+.subreddit-button__container {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.subreddit-button{
+  background-color: #005ca0;
+  color: white;
+  border-style: none;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+
+.subreddit-button:hover {
+  cursor: pointer;
 }
